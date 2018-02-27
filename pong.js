@@ -13,19 +13,19 @@ canvas.height = height;
 var context = canvas.getContext('2d');
 
 window.onload = function(){
-    document.body.appendChild(canvas);
-    animate(step);
-};
-
-var step = function() {
-    update();
-    render();
+    document.body.appendChild(canvas); 
     animate(step);
 };
 
 var update = function() {};
 
 var render = function() {
-    context.fillStyle = "#FF00FF";
+    context.fillStyle = "black";
     context.fillRect(0, 0, width, height);
+};
+
+var step = function() {
+    update();
+    render();
+    animate(step); 
 };
